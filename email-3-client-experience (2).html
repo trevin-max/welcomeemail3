@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Your Clients Share Records - InstaChart</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f7fa;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        
+        /* Header */
+        .header {
+            background: #ffffff;
+            padding: 30px 30px 20px;
+            text-align: center;
+            border-bottom: 2px solid #e8ecf1;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a2b4a;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+        
+        .logo .blue {
+            color: #6BA4FF;
+        }
+        
+        .tagline {
+            font-size: 14px;
+            color: #5a6b87;
+            margin: 0;
+        }
+        
+        /* Main content */
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            color: #1a2b4a;
+            font-weight: 600;
+            margin: 30px 0 16px 0;
+        }
+        
+        .intro-text {
+            font-size: 16px;
+            color: #5a6b87;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        
+        /* Client journey */
+        .journey-section {
+            margin: 30px 0;
+        }
+        
+        .journey-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 12px 16px;
+            background: #f8f9fb;
+            border-radius: 8px;
+            border-left: 3px solid #6BA4FF;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #6BA4FF 0%, #5a94ee 100%);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            font-size: 15px;
+            color: #1a2b4a;
+            margin: 0 0 4px 0;
+            font-weight: 600;
+        }
+        
+        .step-content p {
+            font-size: 13px;
+            color: #5a6b87;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* Video card */
+        .video-card {
+            background: linear-gradient(135deg, #6BA4FF 0%, #5a94ee 100%);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 30px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .video-card-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+        }
+        
+        .video-card-description {
+            font-size: 15px;
+            margin-bottom: 24px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .video-button {
+            display: inline-block;
+            background: white;
+            color: #6BA4FF;
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .video-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Talking points */
+        .talking-points {
+            background: #fff8e6;
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            padding: 28px;
+            margin: 30px 0;
+        }
+        
+        .talking-points h3 {
+            font-size: 18px;
+            color: #1a2b4a;
+            margin: 0 0 16px 0;
+            font-weight: 600;
+        }
+        
+        .talking-points ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .talking-points li {
+            font-size: 15px;
+            color: #5a6b87;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .talking-points li:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* CTA section */
+        .cta-section {
+            background: linear-gradient(135deg, #f8f9fb 0%, #e8ecf1 100%);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .cta-section h3 {
+            font-size: 20px;
+            color: #1a2b4a;
+            margin: 0 0 12px 0;
+            font-weight: 600;
+        }
+        
+        .cta-section p {
+            font-size: 15px;
+            color: #5a6b87;
+            margin: 0 0 20px 0;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #6BA4FF 0%, #5a94ee 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(107, 164, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(107, 164, 255, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #f8f9fb;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e8ecf1;
+        }
+        
+        .footer-text {
+            font-size: 13px;
+            color: #8895ab;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+        
+        .footer-link {
+            color: #6BA4FF;
+            text-decoration: none;
+        }
+        
+        /* Mobile responsive */
+        @media only screen and (max-width: 600px) {
+            .header {
+                padding: 30px 20px 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .video-card {
+                padding: 24px;
+            }
+            
+            .journey-step {
+                padding: 10px 12px;
+            }
+            
+            .talking-points {
+                padding: 20px;
+            }
+            
+            .cta-section {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">INSTA<span class="blue">CHART</span></div>
+            <p class="tagline">Medical Records in Minutes, Not Weeks</p>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <h1 style="font-size: 28px; color: #1a2b4a; font-weight: 700; margin: 0 0 20px 0;">Help Your Clients Share Records 🤝</h1>
+            
+            <p class="intro-text">
+                When you send a request through InstaChart, your client receives an email from your firm, which starts the process. Let's walk through exactly what they'll see.
+            </p>
+            
+            <h2 class="section-title">📧 What Your Client Sees</h2>
+            
+            <!-- Client Journey -->
+            <div class="journey-section">
+                <div class="journey-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Email from Your Firm</h4>
+                        <p>They receive an email asking them to share their medical records.</p>
+                    </div>
+                </div>
+                
+                <div class="journey-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Process</h4>
+                        <p>They click "Share Record" and are taken to their hospital's patient portal login.</p>
+                    </div>
+                </div>
+                
+                <div class="journey-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Login & Allow</h4>
+                        <p>They log in with their hospital credentials, then click "Allow Access."</p>
+                    </div>
+                </div>
+                
+                <div style="padding: 12px 16px; background: #eaf4ea; border-radius: 8px; border-left: 3px solid #4CAF50; margin-top: 8px;">
+                    <div class="step-content">
+                        <h4 style="color: #2e7d32;">✅ Done! Records Sent</h4>
+                        <p>Their records are instantly transferred to your InstaChart dashboard and ready to be downloaded.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Card -->
+            <div class="video-card">
+                <h3 class="video-card-title">📺 See It From Your Client's Perspective</h3>
+                <a href="{{CLIENT_VIDEO_LINK}}" class="video-button">
+                    ▶ Watch Client Experience Video
+                </a>
+            </div>
+            
+            <!-- Talking Points -->
+            <div class="talking-points">
+                <h3>💬 How to Explain InstaChart to Your Clients</h3>
+                <ul>
+                    <li><strong>"Hello, we just need a little bit of cooperation and we can get your records back today."</strong></li>
+                    <li><strong>"It's completely secure"</strong> - They're logging into their own hospital portal, not sharing passwords with anyone.</li>
+                    <li><strong>"It takes 2 minutes"</strong> - Much faster than traditional medical record requests which take weeks.</li>
+                    <li><strong>"It helps your case move faster"</strong> - No more waiting for records means we can get to work on their case immediately.</li>
+                </ul>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h3>🎯 Ready to Send Your First Request?</h3>
+                <a href="https://app.insta-chart.ai/" class="cta-button">
+                    Go to Dashboard →
+                </a>
+            </div>
+            
+            <p class="intro-text" style="text-align: center; margin-top: 30px; border-top: 1px solid #e8ecf1; padding-top: 30px;">
+                <strong>Still have questions?</strong><br>
+                Book a personalized help session and we'll answer everything.<br>
+                <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2cK1lnnlXRywtJBojgkVxAZHZEpsz-oe5ymDOOR7upsreL4hpa_UNe0kIkJ1UqkkQK8VhoOsGj" style="color: #6BA4FF; text-decoration: none; font-weight: 600;">Schedule your help session →</a>
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p class="footer-text"><strong>InstaChart Team</strong></p>
+            <p class="footer-text">Secure Medical Record Sharing</p>
+            <p class="footer-text">
+                Questions? <a href="/cdn-cgi/l/email-protection#b2c1c7c2c2ddc0c6f2dbdcc1c6d39fd1dad3c0c69cd3db" class="footer-link"><span class="__cf_email__" data-cfemail="a4d7d1d4d4cbd6d0e4cdcad7d0c589c7ccc5d6d08ac5cd">[email&#160;protected]</span></a>
+            </p>
+            <p class="footer-text" style="margin-top: 20px; f
